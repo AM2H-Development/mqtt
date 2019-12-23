@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  mqtt:
+    image: "am2h/mqtt:latest"
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+    volumes:
+     - mqtt_data:/var/lib/mosquitto
+volumes:
+  mqtt_data:
