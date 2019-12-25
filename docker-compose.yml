@@ -9,6 +9,15 @@ services:
     volumes:
      - mqtt_data:/mosquitto/data
      - mqtt_log:/mosquitto/log
+     
+    networks:
+      mqtt:
+        aliases:
+          - mqtt-broker
+
 volumes:
   mqtt_data:
   mqtt_log:
+
+networks:
+  mqtt:
