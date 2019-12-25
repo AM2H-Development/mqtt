@@ -1,11 +1,16 @@
 version: "3.7"
 services:
   mqtt:
-    image: "am2h/mqtt:latest"
+    image: "eclipse-mosquitto:latest"
     restart: unless-stopped
     ports:
       - "1883:1883"
+      - "9001:9001"
     volumes:
-     - mqtt_data:/var/lib/mosquitto
+     - mqtt_data:/mosquitto/data
+     - mqtt_log:/mosquitto/log
+     - mqtt_conf:/mosquitto/config
 volumes:
   mqtt_data:
+  mqtt_log:
+  mqtt_conf:
