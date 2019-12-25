@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  mqtt:
+  mqtt-broker:
     image: "am2h/mqtt:latest"
     restart: unless-stopped
     ports:
@@ -9,11 +9,19 @@ services:
     volumes:
      - mqtt_data:/mosquitto/data
      - mqtt_log:/mosquitto/log
-     
     networks:
       mqtt:
         aliases:
           - mqtt-broker
+  mqtt-client:
+    image: "am2h/mqtt-webclient:latest"
+    restart: unless-stopped
+    ports:
+      - "9002:80"
+    networks:
+      mqtt:
+        aliases:
+          - mqtt-client
 
 volumes:
   mqtt_data:
