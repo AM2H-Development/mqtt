@@ -9,8 +9,6 @@ services:
     volumes:
      - mqtt_data:/mosquitto/data
      - mqtt_log:/mosquitto/log
-     - mqtt_conf:/mosquitto/config
 volumes:
   mqtt_data:
   mqtt_log:
-  mqtt_conf:
