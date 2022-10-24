@@ -16,4 +16,4 @@ mosquitto_pub, mosquitto_sub clients installed to use from command line, e.g.:
 * docker exec -it mqtt_mqtt_1 mosquitto_pub -t "hello/world" -m "123"
 * docker exec -it mqtt_mqtt_1 mosquitto_sub -t "hello/world"
 
-mosquitto V 1.6.15
+mosquitto V 2.0.15
