@@ -6,6 +6,8 @@ Logging to console
 ## installation and startup
 * git clone https://github.com/AM2H-Development/mqtt.git
 * cd mqtt
+* sudo chmod +x build.sh
+* ./build.sh
 * docker-compose up -d
 
 ## additional clients
