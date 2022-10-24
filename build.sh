@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t am2h/mqtt:latest -t am2h/mqtt:1.6 .
+docker build -t am2h/mqtt:latest -t am2h/mqtt:2.0 .
