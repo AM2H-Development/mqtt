@@ -9,6 +9,7 @@ services:
     volumes:
      - mqtt_data:/mosquitto/data
      - mqtt_log:/mosquitto/log
+     - mqtt_user:/mosquitto/user
     networks:
       mqtt:
         aliases:
@@ -26,6 +27,7 @@ services:
 volumes:
   mqtt_data:
   mqtt_log:
+  mqtt_user:
 
 networks:
   mqtt:
