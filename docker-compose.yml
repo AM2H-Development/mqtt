@@ -5,8 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - "1883:1883"
-      - "1884:1884"
-      - "9001:9001"
+      #- "1884:1884"
+      #- "9001:9001"
     volumes:
      - mqtt_data:/mosquitto/data
      - mqtt_log:/mosquitto/log
