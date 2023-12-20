@@ -15,6 +15,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_net"
       - "traefik.tcp.services.mqtt.loadbalancer.server.port=1884"
+      - "traefik.http.routers.tcpr_mqtt.tls.certresolver=myresolver"
       - "traefik.tcp.routers.tcpr_mqtt.entrypoints=mqtt"
       - "traefik.tcp.routers.tcpr_mqtt.rule=HostSNI(`home.${HOST}`)"
       - "traefik.tcp.routers.tcpr_mqtt.service=mqtt"
