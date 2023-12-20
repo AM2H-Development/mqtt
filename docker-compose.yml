@@ -22,6 +22,7 @@ services:
      # - "traefik.tcp.routers.tcpr_mqtt_websocket.rule=HostSNI(`*`)"
      # - "traefik.tcp.routers.tcpr_mqtt_websocket.service=mqtt_websocket"
     networks:
+      net:
       mqtt:
         aliases:
           - mqtt-broker
@@ -42,3 +43,6 @@ volumes:
 
 networks:
   mqtt:
+  net:
+   external:
+     name: traefik_net
