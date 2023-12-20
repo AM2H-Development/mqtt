@@ -12,16 +12,12 @@ services:
      - mqtt_log:/mosquitto/log
      - mqtt_user:/mosquitto/user
     labels:
-     - "traefik.enable=true"
-     # - "traefik.docker.network=mqtt"
-     - "traefik.tcp.services.mqtt.loadbalancer.server.port=1884"
-     # - "traefik.tcp.services.mqtt_websocket.loadbalancer.server.port=9001"
-     - "traefik.tcp.routers.tcpr_mqtt.entrypoints=mqtt"
-     - "traefik.tcp.routers.tcpr_mqtt.rule=HostSNI(`*`)"
-     - "traefik.tcp.routers.tcpr_mqtt.service=mqtt"
-     # - "traefik.tcp.routers.tcpr_mqtt_websocket.entrypoints=websocket"
-     # - "traefik.tcp.routers.tcpr_mqtt_websocket.rule=HostSNI(`*`)"
-     # - "traefik.tcp.routers.tcpr_mqtt_websocket.service=mqtt_websocket"
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_net"
+      - "traefik.tcp.services.mqtt.loadbalancer.server.port=1884"
+      - "traefik.tcp.routers.tcpr_mqtt.entrypoints=mqtt"
+      - "traefik.tcp.routers.tcpr_mqtt.rule=HostSNI(`home.${HOST}`)"
+      - "traefik.tcp.routers.tcpr_mqtt.service=mqtt"
     networks:
       net:
       mqtt:
