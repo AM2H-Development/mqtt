@@ -5,6 +5,6 @@ EXPOSE 9001
 
 COPY ./mosquitto.conf /mosquitto/
 COPY ./pw /mosquitto/
-RUN chmod 0700 /mosquitto/pw && chown root /mosquitto/pw
+RUN chmod 0700 /mosquitto/pw && chown root:root /mosquitto/pw
 
 CMD /usr/sbin/mosquitto -c /mosquitto/mosquitto.conf
