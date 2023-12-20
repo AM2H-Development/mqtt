@@ -29,18 +29,14 @@ services:
       
     networks:
       net:
-      mqtt:
-        aliases:
-          - mqtt-broker
+
   mqtt-client:
     image: "am2h/mqtt-webclient:latest"
     restart: unless-stopped
     ports:
       - "9002:80"
     networks:
-      mqtt:
-        aliases:
-          - mqtt-client
+      net:
 
 volumes:
   mqtt_data:
@@ -48,7 +44,6 @@ volumes:
   mqtt_user:
 
 networks:
-  mqtt:
   net:
    external:
      name: traefik_net
