@@ -9,6 +9,7 @@ Logging to console
 * sudo chmod +x build.sh
 * ./build.sh
 * docker-compose --force-recreate --env-file ../.env up -d
+* docker exec -it mqtt_mqtt-broker_1 mosquitto_passwd -c /mosquitto/pw <USER>
 
 ## additional clients
 mosquitto_pub, mosquitto_sub clients installed to use from command line, e.g.:
