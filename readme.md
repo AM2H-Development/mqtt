@@ -8,7 +8,7 @@ Logging to console
 * cd mqtt
 * sudo chmod +x build.sh
 * ./build.sh
-* docker-compose up -d
+* docker-compose --force-recreate --env-file ../.env up -d
 
 ## additional clients
 mosquitto_pub, mosquitto_sub clients installed to use from command line, e.g.:
