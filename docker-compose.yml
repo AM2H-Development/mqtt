@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   mqtt-broker:
-    image: "am2h/mqtt:2.0"
+    image: "am2h/mqtt:2.1"
     restart: unless-stopped
     ports:
       - "1883:1883"
