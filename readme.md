@@ -1,4 +1,7 @@
 # Dockerfile and docker-compose.yml
+
+OLD: Do NOT use any more!
+
 Mosquitto with persistant database
 
 Logging to console

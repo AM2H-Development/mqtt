@@ -13,25 +13,6 @@ services:
      - mqtt_data:/mosquitto/data
      - mqtt_log:/mosquitto/log
      - mqtt_user:/mosquitto/user
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.mqtt.rule=Host(`${HOST}`)"
-      - "traefik.http.routers.mqtt.entrypoints=websecure"
-      - "traefik.http.routers.mqtt.tls.certresolver=myresolver"
-      - "traefik.tcp.routers.mqtt.rule=HostSNI(`*`)"
-      - "traefik.tcp.routers.mqtt.tls.certresolver=myresolver"
-      - "traefik.tcp.services.mqtt.loadbalancer.server.port=1884"
-      - "traefik.tcp.routers.mqtt.entrypoints=mqtt"
-      - "traefik.http.services.mqtt.loadbalancer.server.port=9001"
-
-    networks:
-      net:
-
-  mqtt-client:
-    image: "am2h/mqtt-webclient:latest"
-    restart: unless-stopped
-    ports:
-      - "9002:80"
     networks:
       net:
 
@@ -42,6 +23,5 @@ volumes:
 
 networks:
   net:
-    name: traefik_net
+    name: cloudflare-net
     external: true
-
